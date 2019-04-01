@@ -12,11 +12,9 @@ object SQLContext {
     val sc = new SparkContext(sparkConf)
     val sqlContext = new SQLContext(sc)
 
-
     val people = sqlContext.read.format("json").load(path)
     people.printSchema()
     people.show()
-
 
     sc.stop()
 
